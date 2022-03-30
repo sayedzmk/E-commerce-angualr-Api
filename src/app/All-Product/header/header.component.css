@@ -1,0 +1,51 @@
+.form-control{
+    border-radius: 5px;
+    width: 600px;
+    margin-left: 30px;
+    margin-top: 5px;
+
+}
+strong{
+    font-size: 30px;
+}
+.fa-truck-fast{
+    font-size: 40px
+}
+.fa-cart-arrow-down{
+    font-size: 30px;
+}
+.fa-magnifying-glass{
+    position: absolute;
+    z-index: 10;
+    right:38%;
+    top: 28px;
+    color: #00BFFF;
+}
+@media (max-width:450px) {
+    .form-control{
+        width: 160px;
+        margin-left: 10px;
+        margin-top: 12.4px;
+
+    }
+    .fa-magnifying-glass{
+        position: absolute;
+        z-index: 10;
+        right:28%;
+        top: 33px;
+        color: #00BFFF;
+    }
+    .fa-truck-fast{
+        font-size: 25px;
+        margin-top: 14px;
+
+    }
+    strong{
+        font-size: 25px;
+        margin-top: 5px;
+    }
+    .fa-cart-arrow-down{
+        font-size: 25px;
+    }
+
+}

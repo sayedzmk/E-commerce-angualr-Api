@@ -1,0 +1,30 @@
+<div class="card-top container-fluid">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <a class="mx-3 p-3 " (click)="filter('')"> All Product</a>
+            <a class="mx-3 p-3" (click)="filter('electronics')">Electronics</a>
+            <a class="mx-3 p-3" (click)="filter('fashion')"> Fashion</a>
+            <a class="mx-3 p-3" (click)="filter('jewelery')">Jewelry</a>
+        </div>
+    </div>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <ng-container *ngFor="let data of alldata">
+            <div class="col-md-3" >
+                <div class="card">
+                    <img src="{{data.image}}" class="card-img-top img-fluid " >
+                    <h6 class="card-header ">{{data.title}}</h6>
+                    <div class="card-body">
+                        <p class="card-text " [ngClass]="{'limitTextHeight': isReadMore}">{{data.description}}</p>
+                        <a (click)="showText()">
+                            {{ isReadMore ? 'Read More': 'Read Less' }}
+                        </a>
+                        <h5 class="card-title font"><strong>Price:</strong>${{data.price}}</h5>
+                        <button  class="btn btn-primary w-100 p-2" (click)="addCart(data)">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
