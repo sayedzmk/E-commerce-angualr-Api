@@ -10,7 +10,7 @@
 </div>
 <div class="container mt-3">
     <div class="row">
-        <ng-container *ngFor="let data of alldata">
+        <ng-container *ngFor="let data of filterCategory | filter:searchKey:'title'">
             <div class="col-md-3" >
                 <div class="card">
                     <img src="{{data.image}}" class="card-img-top img-fluid " >

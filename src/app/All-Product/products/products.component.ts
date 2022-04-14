@@ -16,16 +16,17 @@ export class ProductsComponent implements OnInit {
     constructor(private api:APIServiceService ,private cartServ:CartService) { 
     this.api.get().subscribe((data:any)=>{
       this.alldata=data;
-    });
-    this.alldata.forEach((a) => {
-      if(a.category ==="women's clothing" || a.category ==="men's clothing"){
-        a.category ="fashion"
-      }
-      Object.assign(a,{quantity:1,total:a.price});
+      this.filterCategory=data;
+      this.alldata.forEach((a) => {
+        if(a.category ==="women's clothing" || a.category ==="men's clothing"){
+          a.category ="fashion"
+        }
+        Object.assign(a,{quantity:1,total:a.price});
+      });
     });
     this.cartServ.search.subscribe((val:any)=>{
       this.searchKey = val;
-    })
+    });
   }
 
   ngOnInit(): void {
